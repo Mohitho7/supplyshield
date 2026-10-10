@@ -1,0 +1,16 @@
+[
+  {
+    "product_id": "PROD-01",
+    "initial_inventory": 100,
+    "unit_of_measure": "units",
+    "days_of_cover_initial": 2.22,
+    "storage_facility_id": "FAC-01"
+  },
+  {
+    "product_id": "PROD-02",
+    "initial_inventory": 75,
+    "unit_of_measure": "units",
+    "days_of_cover_initial": 2.14,
+    "storage_facility_id": "FAC-02"
+  }
+]

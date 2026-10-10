@@ -1,0 +1,73 @@
+{
+  "network_id": "NET-DEMO-01",
+  "name": "Synthetic 2-Supplier 2-Factory 2-DC Multi-Echelon Topology",
+  "suppliers": [
+    {
+      "id": "SUP-01",
+      "name": "Primary Components",
+      "capacity": 100,
+      "lead_time": 2,
+      "unit_cost": 10.0
+    },
+    {
+      "id": "SUP-02",
+      "name": "Alternate Components",
+      "capacity": 60,
+      "lead_time": 4,
+      "unit_cost": 13.0
+    }
+  ],
+  "factories": [
+    {
+      "id": "FAC-01",
+      "name": "Factory North",
+      "capacity": 100
+    },
+    {
+      "id": "FAC-02",
+      "name": "Factory South",
+      "capacity": 80
+    }
+  ],
+  "distribution_centers": [
+    {
+      "id": "DC-01",
+      "name": "North Distribution Center"
+    },
+    {
+      "id": "DC-02",
+      "name": "South Distribution Center"
+    }
+  ],
+  "products": [
+    {
+      "id": "PROD-01",
+      "name": "Essential Component A",
+      "daily_demand": 45,
+      "initial_inventory": 100,
+      "priority": 1
+    },
+    {
+      "id": "PROD-02",
+      "name": "Essential Component B",
+      "daily_demand": 35,
+      "initial_inventory": 75,
+      "priority": 2
+    }
+  ],
+  "edges": [
+    {"source": "SUP-01", "target": "FAC-01", "type": "replenishment_route", "lead_time_days": 2},
+    {"source": "SUP-01", "target": "FAC-02", "type": "replenishment_route", "lead_time_days": 2},
+    {"source": "SUP-02", "target": "FAC-01", "type": "contingency_route", "lead_time_days": 4},
+    {"source": "SUP-02", "target": "FAC-02", "type": "contingency_route", "lead_time_days": 4},
+    {"source": "FAC-01", "target": "DC-01", "type": "downstream_transfer", "lead_time_days": 0},
+    {"source": "FAC-02", "target": "DC-02", "type": "downstream_transfer", "lead_time_days": 0}
+  ],
+  "enforced_boundaries": {
+    "supplier_disruption_blackout": true,
+    "supplier_daily_capacity_caps": true,
+    "supplier_transit_lead_times": true,
+    "factory_assembly_throughput": false,
+    "distribution_center_storage": false
+  }
+}

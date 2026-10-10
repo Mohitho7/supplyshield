@@ -1,0 +1,28 @@
+[
+  {
+    "id": "SUP-01",
+    "name": "Primary Components",
+    "lead_time": 2,
+    "capacity": 100,
+    "unit_cost": 10.0,
+    "freight_cost": 2.0,
+    "landed_cost": 12.0,
+    "currency": "INR",
+    "is_primary": true,
+    "disruption_subject": true,
+    "operational_notes": "Primary high-volume component supplier. Subject to shutdown blackout during disruption window."
+  },
+  {
+    "id": "SUP-02",
+    "name": "Alternate Components",
+    "lead_time": 4,
+    "capacity": 60,
+    "unit_cost": 13.0,
+    "freight_cost": 3.5,
+    "landed_cost": 16.5,
+    "currency": "INR",
+    "is_primary": false,
+    "disruption_subject": false,
+    "operational_notes": "Contingency alternate supplier. Enforces shared 60 u/day throughput limit and 4-day transit lead time."
+  }
+]

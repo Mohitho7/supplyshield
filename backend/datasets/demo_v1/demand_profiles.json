@@ -1,0 +1,25 @@
+{
+  "horizon_days": 21,
+  "service_convention": "lost_service",
+  "notes": "Unmet customer demand is treated as period-specific lost volume. No carried-forward backlog queue.",
+  "profiles": [
+    {
+      "product_id": "PROD-01",
+      "daily_demand": 45,
+      "horizon_demand": 945,
+      "priority": 1,
+      "criticality": "CRITICAL (Tier 1)"
+    },
+    {
+      "product_id": "PROD-02",
+      "daily_demand": 35,
+      "horizon_demand": 735,
+      "priority": 2,
+      "criticality": "STANDARD (Tier 2)"
+    }
+  ],
+  "aggregate_metrics": {
+    "total_daily_demand": 80,
+    "total_horizon_demand": 1680
+  }
+}

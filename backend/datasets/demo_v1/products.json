@@ -1,0 +1,22 @@
+[
+  {
+    "id": "PROD-01",
+    "name": "Essential Component A",
+    "unit_of_measure": "units",
+    "daily_demand": 45,
+    "initial_inventory": 100,
+    "priority": 1,
+    "criticality": "CRITICAL (Tier 1)",
+    "description": "High-criticality component requiring aggressive protection under alternate supplier capacity scarcity."
+  },
+  {
+    "id": "PROD-02",
+    "name": "Essential Component B",
+    "unit_of_measure": "units",
+    "daily_demand": 35,
+    "initial_inventory": 75,
+    "priority": 2,
+    "criticality": "STANDARD (Tier 2)",
+    "description": "Standard business component whose allocation can be traded off when capacity is strictly constrained."
+  }
+]

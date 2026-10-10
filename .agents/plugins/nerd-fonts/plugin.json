@@ -1,0 +1,22 @@
+{
+  "name": "nerd-fonts",
+  "version": "1.0.0",
+  "description": "Nerd Fonts icon and glyph support for Antigravity terminal HUD, status lines, and CLI telemetry.",
+  "author": "Antigravity Community",
+  "recommended_fonts": [
+    "JetBrainsMono Nerd Font",
+    "FiraCode Nerd Font",
+    "Hack Nerd Font",
+    "MesloLGS NF"
+  ],
+  "glyph_mappings": {
+    "git_branch": "\ue0a0",
+    "shield_check": "\uf023",
+    "alert_triangle": "\uf071",
+    "bot": "\uf544",
+    "zap": "\uf0e7",
+    "clock": "\uf017",
+    "check": "\uf00c",
+    "cross": "\uf00d"
+  }
+}

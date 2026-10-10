@@ -1,0 +1,16 @@
+{
+  "currency": "INR",
+  "procurement_unit_costs": {
+    "SUP-01": 10.0,
+    "SUP-02": 13.0
+  },
+  "freight_unit_costs": {
+    "SUP-01": 2.0,
+    "SUP-02": 3.5
+  },
+  "landed_unit_costs": {
+    "SUP-01": 12.0,
+    "SUP-02": 16.5
+  },
+  "reconciliation_formula": "landed_unit_cost = procurement_unit_cost + freight_unit_cost"
+}

@@ -1,0 +1,11 @@
+{
+  "planning_horizon_days": 21,
+  "default_seed": 42,
+  "target_fill_rate_percentage": 95.0,
+  "recovery_criteria": "3 consecutive days at or above 95.0% fill rate after disruption dip",
+  "supported_shutdown_days_range": [1, 14],
+  "supported_strategies": ["reorder", "optimized", "agent"],
+  "scenario_id_template": "SCEN-SD{shutdown_days}-H{horizon_days}-S{seed}",
+  "disrupted_primary_supplier": "SUP-01",
+  "contingency_supplier": "SUP-02"
+}

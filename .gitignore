@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+*.log
+
+# Demo Approval Ledger & Test Data
+backend/data/*.jsonl
+backend/data/
+
+# Node
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# IDE
+.vscode/
+.idea/
+.DS_Store
+
+# Local scratch analysis
+/brain/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Private keys and credentials
+*.pem
+*.key
+credentials/
+secrets/

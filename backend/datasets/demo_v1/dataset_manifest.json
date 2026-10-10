@@ -1,0 +1,27 @@
+{
+  "dataset_id": "demo_v1",
+  "dataset_version": "1.0.0",
+  "schema_version": "1.0.0",
+  "source_type": "synthetic_demo",
+  "is_synthetic": true,
+  "created_at_iso": "2026-10-10T00:00:00Z",
+  "description": "Canonical deterministic 21-day multi-echelon supply chain dataset for SupplyShield AI demonstration and resilience evaluation.",
+  "files": {
+    "suppliers": "suppliers.json",
+    "products": "products.json",
+    "network": "network.json",
+    "inventory": "inventory.json",
+    "demand_profiles": "demand_profiles.json",
+    "scenarios": "scenarios.json",
+    "cost_config": "cost_config.json"
+  },
+  "limitations": [
+    "Synthetic deterministic daily demand profile without external stochastic variation",
+    "Primary supplier SUP-01 is subject to deterministic shutdown outage for 1-14 days",
+    "Alternate supplier SUP-02 enforces strict 60 units/day shared daily capacity constraint",
+    "Factory assembly throughput (FAC-01: 100, FAC-02: 80) is topological structural metadata (NOT_MODELED as binding simulation constraint)",
+    "Distribution center storage buffers (DC-01, DC-02) are topological structural metadata (NOT_MODELED as binding simulation constraint)",
+    "Unmet customer demand is accounted under period-specific lost-service convention (no backlog queue carryover)",
+    "External enterprise ERP integrations and real-world purchase order dispatch are NOT_CONFIGURED"
+  ]
+}
