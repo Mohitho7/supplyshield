@@ -34,14 +34,32 @@ export const CommandCenter: React.FC = () => {
   return (
     <section className="page" id="page-command" aria-label="Command center">
       {/* PRIORITY 1: Top Incident, Scenario, Strategy, & Approval Status */}
-      <div className="hero" style={{ marginBottom: '16px', padding: '22px 24px' }}>
+      <div
+        className="hero"
+        style={{
+          gridTemplateColumns: 'minmax(0, 1fr) 280px',
+          marginBottom: '16px',
+          padding: '22px 24px'
+        }}
+      >
         <div className="hero-copy">
           <div style={{ display: 'flex', gap: '8px', alignItems: 'center', flexWrap: 'wrap', marginBottom: '8px' }}>
             <span className="status status-danger">
               SUP-01 Disrupted · Days 1–{shutdownDays} Outage
             </span>
-            <span className="scenario-pill">
-              {scenarioId}
+            <span
+              className="scenario-pill"
+              id="heroScenarioPill"
+              style={{
+                background: 'rgba(230, 183, 46, 0.14)',
+                borderColor: 'rgba(230, 183, 46, 0.45)',
+                color: 'var(--accent, #e6b72e)',
+                fontWeight: 800,
+                fontFamily: 'monospace',
+                fontSize: '12px'
+              }}
+            >
+              Scenario: {scenarioId}
             </span>
             <span className="status status-good">
               Recommended: {recommendedCandidate.name} (Rank 1)
@@ -101,15 +119,117 @@ export const CommandCenter: React.FC = () => {
           </div>
         </div>
 
-        <div className="hero-status" style={{ borderLeft: '1px solid #3d505b', paddingLeft: '20px' }}>
-          <div>
-            <div className="label">Outage Duration</div>
-            <div className="value" id="heroShutdown" style={{ fontSize: '22px' }}>{shutdownDays} days</div>
-            <div className="detail">SUP-01 · from Day 1</div>
+        <div
+          className="hero-status"
+          style={{
+            borderLeft: '1px solid #3d505b',
+            paddingLeft: '20px',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '10px',
+            justifyContent: 'center'
+          }}
+        >
+          {/* Dedicated Active Scenario Card */}
+          <div
+            className="hero-stat-card"
+            id="heroActiveScenarioCard"
+            style={{
+              background: 'rgba(255, 255, 255, 0.04)',
+              padding: '10px 14px',
+              borderRadius: '8px',
+              border: '1px solid rgba(255, 255, 255, 0.1)'
+            }}
+          >
+            <div
+              className="label"
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                color: '#b4c1c9',
+                fontSize: '11px',
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em',
+                fontWeight: 600
+              }}
+            >
+              <span>Active Scenario</span>
+              <span className="status status-info" style={{ fontSize: '10px', padding: '1px 5px', borderRadius: '4px' }}>
+                H21 · S42
+              </span>
+            </div>
+            <div
+              className="value"
+              id="heroScenarioId"
+              style={{
+                fontSize: '15px',
+                fontWeight: 800,
+                fontFamily: 'monospace',
+                color: 'var(--accent, #e6b72e)',
+                marginTop: '4px',
+                letterSpacing: '0.02em',
+                wordBreak: 'break-all'
+              }}
+            >
+              {scenarioId}
+            </div>
+            <div className="detail" style={{ fontSize: '11px', color: '#c1cbd1', marginTop: '3px' }}>
+              {scenarioData.isVerifiedSnapshot ? 'Verified benchmark model' : 'Simulation model'} · 21d horizon
+            </div>
           </div>
-          <div>
-            <div className="label">Planner Sign-Off</div>
-            <div style={{ marginTop: '3px' }}>
+
+          <div
+            className="hero-stat-card"
+            style={{
+              background: 'rgba(255, 255, 255, 0.04)',
+              padding: '10px 14px',
+              borderRadius: '8px',
+              border: '1px solid rgba(255, 255, 255, 0.1)'
+            }}
+          >
+            <div
+              className="label"
+              style={{
+                color: '#b4c1c9',
+                fontSize: '11px',
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em',
+                fontWeight: 600
+              }}
+            >
+              Outage Duration
+            </div>
+            <div className="value" id="heroShutdown" style={{ fontSize: '20px', fontWeight: 800, marginTop: '2px' }}>
+              {shutdownDays} days
+            </div>
+            <div className="detail" style={{ fontSize: '11px', color: '#c1cbd1', marginTop: '2px' }}>
+              SUP-01 · from Day 1
+            </div>
+          </div>
+
+          <div
+            className="hero-stat-card"
+            style={{
+              background: 'rgba(255, 255, 255, 0.04)',
+              padding: '10px 14px',
+              borderRadius: '8px',
+              border: '1px solid rgba(255, 255, 255, 0.1)'
+            }}
+          >
+            <div
+              className="label"
+              style={{
+                color: '#b4c1c9',
+                fontSize: '11px',
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em',
+                fontWeight: 600
+              }}
+            >
+              Planner Sign-Off
+            </div>
+            <div style={{ marginTop: '4px' }}>
               {plannerDecision === 'approved' ? (
                 <span className="status status-good" style={{ fontSize: '11px' }}>Approved</span>
               ) : plannerDecision === 'rejected' ? (
@@ -118,7 +238,7 @@ export const CommandCenter: React.FC = () => {
                 <span className="status status-warning" style={{ fontSize: '11px' }}>Awaiting review</span>
               )}
             </div>
-            <div className="detail" style={{ marginTop: '5px' }}>
+            <div className="detail" style={{ marginTop: '4px', fontSize: '11px', color: '#c1cbd1' }}>
               {plannerDecision === 'approved'
                 ? 'Sign-off logged. Live PO dispatch disabled.'
                 : 'Managerial review required.'}

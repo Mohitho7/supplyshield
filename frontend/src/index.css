@@ -580,6 +580,19 @@ h3 {
   color: #c1cbd1;
 }
 
+.hero-stat-card {
+  background: rgba(255, 255, 255, 0.04);
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.hero-stat-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(230, 183, 46, 0.3);
+}
+
 /* Metric KPI Cards */
 .mini-kpis {
   display: grid;

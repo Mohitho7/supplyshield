@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrandLogo } from '../common/BrandLogo';
 import { useScenario } from '../../context/useScenario';
 import type { PageId } from '../../types';
 
@@ -23,11 +24,8 @@ export const Sidebar: React.FC = () => {
   return (
     <aside className="sidebar" aria-label="Application navigation">
       <div>
-        <div className="brand">
-          <span className="brand-mark" aria-hidden="true">S</span>
-          <span>
-            SUPPLYSHIELD <span style={{ fontWeight: 500, opacity: 0.68 }}>AI</span>
-          </span>
+        <div className="brand" style={{ padding: '2px 4px' }}>
+          <BrandLogo size={30} showSubtitle={true} />
         </div>
 
         <div className="side-label" style={{ marginTop: '29px' }}>
